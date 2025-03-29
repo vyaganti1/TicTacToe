@@ -1,0 +1,155 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+#options {
+    margin-bottom: 20px;
+}
+
+#options button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ddd;
+    color: black;
+    border: none;
+    border-radius: 5px;
+}
+
+#options button:hover {
+    background-color: #bbb;
+}
+
+.game-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#score-left, #score-right {
+    font-size: 24px;
+    color: black;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 0;
+    background-color: black;
+    padding: 0;
+    position: relative;
+    border: 5px solid black;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s;
+    box-sizing: border-box;
+}
+
+.cell.red {
+    color: #ff073a;
+    text-shadow: 0 0 10px #ff073a, 0 0 20px #ff073a;
+}
+
+.cell.blue {
+    color: #00d9ff;
+    text-shadow: 0 0 10px #00d9ff, 0 0 20px #00d9ff;
+}
+
+.cell:active {
+    transform: scale(0.95);
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 20px;
+    color: black;
+}
+
+#win-message {
+    margin-bottom: 20px;
+    font-size: 48px;
+    font-weight: bold;
+    display: none;
+}
+
+#win-message.red {
+    color: #ff073a;
+    text-shadow: 0 0 10px #ff073a, 0 0 20px #ff073a;
+}
+
+#win-message.blue {
+    color: #00d9ff;
+    text-shadow: 0 0 10px #00d9ff, 0 0 20px #00d9ff;
+}
+
+#reset {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ddd;
+    color: black;
+    border: none;
+    border-radius: 5px;
+}
+
+#reset:hover {
+    background-color: #bbb;
+}
+
+#mode-switch {
+    margin-top: 10px;
+}
+
+#mode-switch button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ddd;
+    color: black;
+    border: none;
+    border-radius: 5px;
+}
+
+#mode-switch button:hover {
+    background-color: #bbb;
+}
+
+.winning-line {
+    position: absolute;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.winning-line.red {
+    background-color: #ff073a;
+    box-shadow: 0 0 10px #ff073a;
+}
+
+.winning-line.blue {
+    background-color: #00d9ff;
+    box-shadow: 0 0 10px #00d9ff;
+}
